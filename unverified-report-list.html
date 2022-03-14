@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon"
+          type="image/png"
+          href="./assets/img/eco-icon.png">
+    <title>
+      Hụi Tốt
+    </title>
+    <!--     Fonts and Icons     -->
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <!-- Nucleo Icons -->
+    <link href="./assets/css/nucleo-icons.css"
+          rel="stylesheet" />
+    <link href="./assets/css/nucleo-svg.css"
+          rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js"
+            crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+          rel="stylesheet">
+    <!-- CSS Files -->
+    <link id="pagestyle"
+          href="./assets/css/material-dashboard.css?v=3.0.0"
+          rel="stylesheet" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script> -->
+
+    <style>
+      .bg-green {
+        background-color: #089C44 !important;
+      }
+
+      .overall-description {
+        padding-left: 75px;
+      }
+
+      .avatar {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+
+  <body class="g-sidenav-show  bg-gray-200">
+    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-green"
+           id="sidenav-main">
+      <div class="sidenav-header">
+        <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+           aria-hidden="true"
+           id="iconSidenav"></i>
+        <a class="navbar-brand m-0 d-flex justify-content-center"
+           href="./dashboard.html"
+           target="_blank">
+          <img src="./assets/img/hui-tot-icon.png"
+               class="navbar-brand-img h-100"
+               alt="main_logo">
+        </a>
+      </div>
+      <hr class="horizontal light mt-0 mb-2">
+      <div class="collapse navbar-collapse  w-auto  max-height-vh-100"
+           id="sidenav-collapse-main">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white"
+               href="./dashboard.html">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons opacity-10">dashboard</i>
+              </div>
+              <span class="nav-link-text ms-1">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white"
+               href="./account-list.html">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons opacity-10">people</i>
+              </div>
+              <span class="nav-link-text ms-1">Tất cả tài khoản</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white text-wrap bg-gradient-warning"
+               href="./unverified-account-list.html">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons opacity-10">people</i>
+              </div>
+              <span class="nav-link-text ms-1">Danh sách tài khoản cần phê duyệt</span>
+              <span class="badge bg-warning text-dark bg-white mx-1">(30)</span>
+            </a>
+          </li>
+          <li>
+            <hr class="horizontal light mt-4 mb-2">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white"
+               href="./report-list.html">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons opacity-10">report_problem</i>
+              </div>
+              <span class="nav-link-text ms-1">Tất cả báo cáo</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white text-wrap bg-gradient-primary active"
+               href="./unverified-report-list.html">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons opacity-10">report_problem</i>
+              </div>
+              <span class="nav-link-text ms-1">Danh sách báo cáo cần xem xét</span>
+              <span class="badge bg-warning text-dark bg-white mx-1">(6)</span>
+            </a>
+          </li>
+          <li>
+            <hr class="horizontal light mt-4 mb-2">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white "
+               href="./play-list.html">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons opacity-10">list</i>
+              </div>
+              <span class="nav-link-text ms-1">Tất cả dây hụi</span>
+            </a>
+          </li>
+    </aside>
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+      <!-- Navbar -->
+      <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl"
+           id="navbarBlur"
+           navbar-scroll="true">
+        <div class="container-fluid py-1 px-3">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+              <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark"
+                   href="javascript:;">Trang</a></li>
+              <li class="breadcrumb-item text-sm text-dark active"
+                  aria-current="page">Danh sách báo cáo cần xem xét</li>
+            </ol>
+            <h6 class="font-weight-bolder mb-0">Danh sách báo cáo cần xem xét</h6>
+          </nav>
+          <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
+               id="navbar">
+            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+            </div>
+            <ul class="navbar-nav  justify-content-end">
+              <!-- <li class="nav-item d-flex align-items-center">
+                <a href="javascript:;"
+                   class="nav-link text-body font-weight-bold px-0">
+                  <img src="./assets/img/avatar.jpg" class="avatar mr-5">
+                  <span class="d-sm-inline d-none" style="padding-left: 7px; text-decoration: underline;">Trung Thịnh</span>
+                </a>
+              </li> -->
+              <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                <a href="javascript:;"
+                   class="nav-link text-body p-0"
+                   id="dropdownMenuButton"
+                   data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                  <img src="./assets/img/avatar.jpg"
+                       class="avatar mr-5">
+                  <span class="d-sm-inline d-none"
+                        style="padding-left: 7px; text-decoration: underline;">Trung Thịnh</span>
+                </a>
+                <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4"
+                    aria-labelledby="dropdownMenuButton">
+                  <li class="mb-2">
+                    <a class="dropdown-item border-radius-md"
+                       href="javascript:;">
+                      <a href="./index.html" class="d-flex justify-content-center border-1">
+                        Logout
+                      </a>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                <a href="javascript:;"
+                   class="nav-link text-body p-0"
+                   id="iconNavbarSidenav">
+                  <div class="sidenav-toggler-inner">
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="container-fluid py-4">
+        <div class="row">
+          <div class="col-12">
+            <div class="card my-4">
+              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                  <h6 class="text-white text-capitalize ps-3">Danh sách tài khoản</h6>
+                </div>
+              </div>
+              <div class="card-body px-0 pb-2">
+                <div class="table-responsive p-0">
+                  <table class="table align-items-center mb-0">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Người báo cáo
+                        </th>
+                        <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">
+                          Người bị báo cáo</th>
+                        <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">
+                          Thông tin dây hụi</th>
+                        <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Loại
+                          báo cáo</th>
+                        <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Ngày
+                          báo cáo</th>
+                        <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7"></th>
+                        <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7"></th>
+                        <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <a href="./account-detail.html"
+                                 data-bs-toggle="modal"
+                                 data-bs-target="#modifyModal"><img src="./assets/img/team-1.jpg"
+                                     class="avatar avatar-sm me-3 border-radius-lg"></a>
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                              <a href="./account-detail.html"
+                                 data-bs-toggle="modal"
+                                 data-bs-target="#modifyModal">
+                                <h6 class="mb-0 text-sm">Hoàng Trung Nam</h6>
+                              </a>
+                              <a href="./account-detail.html"
+                                 data-bs-toggle="modal"
+                                 data-bs-target="#modifyModal">
+                                <p class="text-xs text-secondary mb-0">namhoang.11@gmail.com</p>
+                              </a>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <a href="./account-detail.html"
+                                 data-bs-toggle="modal"
+                                 data-bs-target="#modifyModal"><img src="./assets/img/team-2.jpg"
+                                     class="avatar avatar-sm me-3 border-radius-lg"></a>
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                              <a href="./account-detail.html"
+                                 data-bs-toggle="modal"
+                                 data-bs-target="#modifyModal">
+                                <h6 class="mb-0 text-sm">Ngô Đinh Diệp</h6>
+                              </a>
+                              <a href="./account-detail.html"
+                                 data-bs-toggle="modal"
+                                 data-bs-target="#modifyModal">
+                                <p class="text-xs text-secondary mb-0">cutecat2022@gmail.com</p>
+                              </a>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle text-center">
+                          <p class="text-sm font-weight-bold mb-0">Tiền hụi: 25,250,000đ</p>
+                          <p class="text-sm text-secondary mb-0">Đã góp: 3/12 kỳ</p>
+                          <a href="/play-detail.html"
+                             class="text-muted text-xs text-decoration-underline">xem chi tiết</a>
+                        </td>
+                        <td class="align-middle text-center">
+                          <span class="badge badge-sm bg-gradient-success">Trễ hạn góp hụi</span>
+                        </td>
+                        <td class="align-middle text-center">
+                          <span class="text-secondary text-sm font-weight-bold">23/04/2018</span>
+                        </td>
+                        <td class="align-middle">
+                          <button type="button"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#reasonModal"
+                                  class="btn btn-info btn-sm"
+                                  style="float:none!important;display:inline;">
+                            Xem lý do báo cáo
+                          </button>
+                        </td>
+                        <td class="align-middle">
+                          <button type="button"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#handleModal"
+                                  class="btn btn-slack btn-sm"
+                                  style="float:none!important;display:inline;">
+                            Xử lý
+                          </button>
+                        </td>
+                        <td class="align-middle">
+                          <button type="button"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#denyModal"
+                                  class="btn btn-primary btn-sm"
+                                  style="float:none!important;display:inline;">
+                            Từ chối
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modify Modal -->
+    <div class="modal fade"
+         tabindex="-1"
+         id="modifyModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Cập nhật thông tin</h5>
+          </div>
+          <div class="modal-body px-4">
+            <form>
+              <h3>Thông tin cá nhân</h3>
+              <div class="mb-3">
+                <label class="form-label">Tên người chơi</label>
+                <input type="text"
+                       required
+                       class="form-control"
+                       value="Hoàng Trung Nam"
+                       disabled>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email người chơi</label>
+                <input type="text"
+                       class="form-control"
+                       value="namhoang.11@gmail.com"
+                       disabled>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Số điện thoại</label>
+                <input type="text"
+                       required
+                       class="form-control"
+                       value="0901938233"
+                       disabled>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Ngày sinh</label>
+                <input type="date"
+                       required
+                       value="2000-03-22"
+                       class="form-control"
+                       disabled>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Địa chỉ thường trú</label>
+                <input type="text"
+                       required
+                       class="form-control"
+                       value="333 Hoàng Hoa Thám, Phường Linh Chiểu, Quận Thủ Đức, TPHCM"
+                       disabled>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Địa chỉ tạm trú</label>
+                <input type="text"
+                       required
+                       class="form-control"
+                       value="333 Hoàng Hoa Thám, Phường Linh Chiểu, Quận Thủ Đức, TPHCM"
+                       disabled>
+              </div>
+              <h3 class="mt-5">Thông tin công việc & thu nhập</h3>
+              <div class="mb-3">
+                <label class="form-label">Tên công việc</label>
+                <input type="text"
+                       required
+                       class="form-control"
+                       value="Lập trình viên"
+                       disabled>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Mô ta nhanh về công việc(không bắt buộc)</label>
+                <textarea class="form-control"
+                          cols="30"
+                          rows="3"
+                          disabled>Xây dựng và phát triển hệ thống dành cho các công ty công nghệ lớn trên thế giới</textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Tên công ty</label>
+                <input type="text"
+                       required
+                       disabled
+                       class="form-control"
+                       value="Destinee Incorperation">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Địa chỉ công ty</label>
+                <input type="text"
+                       required
+                       disabled
+                       class="form-control"
+                       value="67 Lê Lai, Phường 23, Quận 3, TPHCM">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Thu nhập tháng</label>
+                <input type="number"
+                       min="5000000"
+                       required
+                       disabled
+                       class="form-control"
+                       value="62000000">
+                <div id="emailHelp"
+                     class="form-text">Cần phải có thu nhập tối thiểu là 5,000,000đ/tháng để đạt tiêu chuẩn</div>
+              </div>
+              <h3 class="mt-5">Tài liệu quan trọng đính kèm</h3>
+              <div id="emailHelp"
+                   class="form-text">Tài liệu có thể gồm: Hình sổ hộ khẩu, hình chứng minh nhân dân, giấy công chứng nhà
+                đất & giấy công chứng các tài sản liên quan v.v.</div>
+              <img src="./assets/img/cmnd.jpg"
+                   class="img-fluid m-1 mx-auto d-block">
+              <img src="./assets/img/ho-khau.jpg"
+                   class="img-fluid m-1 mx-auto d-block">
+              <img src="./assets/img/so-hong.jpg"
+                   class="img-fluid m-1 mx-auto d-block">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reason Modal -->
+    <div class="modal fade"
+         tabindex="-1"
+         id="reasonModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Lý do báo cáo</h5>
+          </div>
+          <div class="modal-body px-4">
+            <form>
+              <h3>Thông tin tài khoản báo cáo</h3>
+              <div class="mb-3">
+                <label class="form-label">Tên</label>
+                <input type="text"
+                       required
+                       disabled
+                       class="form-control"
+                       value="Hoàng Trung Nam">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="text"
+                       disabled
+                       class="form-control"
+                       value="namhoang.11@gmail.com">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Số điện thoại</label>
+                <input type="text"
+                       required
+                       disabled
+                       class="form-control"
+                       value="0901938233">
+              </div>
+              <hr>
+              <h3>Thông tin tài khoản bị báo cáo</h3>
+              <div class="mb-3">
+                <label class="form-label">Tên</label>
+                <input type="text"
+                       required
+                       disabled
+                       class="form-control"
+                       value="Ngô Đình Diệp">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="text"
+                       disabled
+                       class="form-control"
+                       value="cutecat2022@gmail.com">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Số điện thoại</label>
+                <input type="text"
+                       required
+                       disabled
+                       class="form-control"
+                       value="0901938233">
+              </div>
+              <hr>
+              <div class="mb-3">
+                <label class="form-label">Nội dung báo cáo</label>
+                <textarea class="form-control"
+                          cols="30"
+                          rows="7"
+                          disabled>Xin các quản lý xem xét giúp tôi trường hợp của cá nhân này, không hợp tác trong quá trình góp hụi. Tôi đã liên lạc trực tiếp với đối tượng thông qua số điện thoại được liệt kê trong hệ thống nhưng không nhận được phản hồi. Hiện tại những thông tin về người bảo hộ của cá nhân này cũng từ chối trao đổi thông tin & giúp đỡ trong việc liên lạc với đối tượng. Xin cám ơn</textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Tổng tiền trễ hụi</label>
+                <input type="text"
+                       required
+                       disabled
+                       class="form-control"
+                       value="25,050,000đ">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Thông tin chi tiết</label>
+                <ul>
+                  <li>Người báo cáo: <u><a href="./account-detail.html"
+                         class="text-muted">xem chi tiết</a></u></li>
+                  <li>Người bị báo cáo: <u><a href="./account-detail.html"
+                         class="text-muted">xem chi tiết</a></u></li>
+                  <li>Dây hụi: <u><a href="./account-detail.html"
+                         class="text-muted">xem chi tiết</a></u></li>
+                </ul>
+              </div>
+              <div class="d-flex"
+                   style="margin-top: 16px;">
+                <button type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#handleModal"
+                        class="btn btn-lg btn-warning d-block w-100">Xử lý báo cáo</button>
+                <button type="button"
+                        data-bs-dismiss="modal"
+                        class="btn btn-lg btn-secondary d-block w-100 ml-3"
+                        style="margin-left: 21px;">Để sau</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Handle Modal -->
+    <div class="modal fade"
+         tabindex="-1"
+         id="handleModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Xử lý</h5>
+          </div>
+          <div class="modal-body px-4">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Phương thức xử lý</label>
+                <div class="form-check">
+                  <input class="form-check-input"
+                         type="radio"
+                         name="radio"
+                         id="radio-1">
+                  <label class="form-check-label"
+                         for="radio-1">
+                    Khoá tài khoản vi phạm
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input"
+                         type="radio"
+                         id="radio-2"
+                         name="radio"
+                         checked>
+                  <label class="form-check-label"
+                         for="radio-2">
+                    Nhắc nhở
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input"
+                         type="radio"
+                         id="radio-3"
+                         name="radio"
+                         checked>
+                  <label class="form-check-label"
+                         for="radio-3">
+                    Để sau
+                  </label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Nội dung xử lý</label>
+                <textarea class="form-control"
+                          cols="30"
+                          rows="3"></textarea>
+              </div>
+              <button type="button"
+                      class="btn btn-lg btn-success d-block mt-3 mx-auto w-50"
+                      data-bs-dismiss="modal">Thực hiện xử lý</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deny Modal -->
+    <div class="modal fade"
+         tabindex="-1"
+         id="denyModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body px-4">
+            <span class="text-primary text-lg">Bạn có chắc chắn muốn từ chối báo cáo này?</span>
+          </div>
+          <div class="modal-footer">
+            <button type="button"
+                    class="btn btn-slack"
+                    data-bs-dismiss="modal">Đúng, tôi muốn từ chối báo cáo này</button>
+            <button type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal">Không</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="./assets/js/core/popper.min.js"></script>
+    <script src="./assets/js/core/bootstrap.min.js"></script>
+    <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="./assets/js/plugins/chartjs.min.js"></script>
+    <script>
+      var win = navigator.platform.indexOf('Win') > -1;
+      if (win && document.querySelector('#sidenav-scrollbar')) {
+        var options = {
+          damping: '0.5'
+        }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+      }
+    </script>
+    <!-- Github buttons -->
+    <script async
+            defer
+            src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="./assets/js/material-dashboard.min.js?v=3.0.0"></script>
+  </body>
+
+</html>
